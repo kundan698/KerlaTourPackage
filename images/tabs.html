@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: sans-serif;
+        }
+        .tabOuter{
+            width: 1320px;
+            margin: auto;
+        }
+
+        .tabsItems{
+            display: flex;
+            list-style: none;
+            border-bottom: 1px solid #ccc;
+        }
+        .tabsItems li{
+            padding: 15px 25px;
+            cursor: pointer;
+            background-color: #ccc;
+            margin-right: 10px;
+        }
+        .tabsItems li:hover{
+            background-color: orange !important;
+        }
+        .tabsActive{
+            background-color: orange !important;
+            color: white;
+        }
+
+        .tabContentItems{
+            background-color: lightgoldenrodyellow;
+            padding: 10px;
+            margin-bottom: 10px;
+            line-height: 25px;
+            display: none;
+        }
+        .activeContent{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabOuter">
+        <ul class="tabsItems">
+            <li class="tabsActive">Mission</li> 
+            <li>Vision</li>      
+            <li>Values</li>     
+        </ul>
+
+        <div class="tabContent">
+            <div class="tabContentItems activeContent"> 
+                <p>As a premier recruitment agency, our vision is to offer unrivaled and reliable recruitment services to our esteemed clients, positioning ourselves as the leading choice in this domain. With this vision as our guiding light, our mission becomes clear: to present a myriad of exceptional job opportunities to aspiring candidates who have the potential to shape the future, while ensuring that employers have access to the finest talent available.Please for more information on us visit our Aether Hire
+                </p>
+            </div>
+            <div class="tabContentItems "> 
+                <p>At the heart of our agency, we are anchored by a set of unwavering values that define our ethos and propel us forward in our commitment to excellence:
+
+                    Honesty: We prioritize truthfulness and transparency in all interactions, fostering trust among both clients and candidates. Trust is the cornerstone of our relationships.
+                    
+                    Integrity: Demonstrating unwavering ethical conduct and professionalism in all operations, we instill confidence in our services. Our commitment to integrity is unwavering, ensuring clients and candidates receive ethical, professional guidance throughout their recruitment journey.
+                    
+                    Trust: Building enduring relationships through integrity and reliability, we earn the trust of clients and candidates alike. Trust is vital in the recruitment process, and we focus on creating lasting partnerships based on these principles.
+                    
+                    </p>
+            </div>
+            <div class="tabContentItems">
+                <p>Commitment: Wholeheartedly dedicating ourselves to delivering exceptional service, exceeding expectations, and achieving remarkable results.
+                    Partnership: Emphasizing respect for the dignity and worth of each individual, cultivating an inclusive and supportive environment.
+                    Quality: Pursuing excellence and precision in our services, delivering unparalleled value to our clients and candidates.
+                    Guided by these principles, we forge ahead with unwavering determination, driven to make a profound and positive impact in the world of recruitment. Our team’s passion for connecting exceptional talent with outstanding opportunities fuels our commitment to excellence. We understand that successful recruitment is not just a transaction; it’s about building lasting partnerships and transforming careers. With a focus on both on-site and remote team placements, we ensure that businesses thrive and individuals flourish. At
+                    Aether Hire we are dedicated to shaping the future of recruitment, one success story at a time. For all queries please Contact Us</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let allItems=document.querySelectorAll(".tabsItems li");
+    let alltabContent=document.querySelectorAll(".tabContentItems")
+
+    allItems.forEach((element,index)=>{
+        element.addEventListener("click",()=>{
+            //index  1
+
+            alltabContent.forEach((contentElement)=>{
+                contentElement.classList.remove('activeContent')
+            })
+
+            allItems.forEach((items)=>{
+                items.classList.remove('tabsActive')
+            })
+
+           element.classList.add('tabsActive')  
+           alltabContent[index].classList.add('activeContent')
+        })
+    })
+</script>
+</html>
